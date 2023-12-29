@@ -1,0 +1,161 @@
+#`vtype`vname`vvalue`vextra
+s`__name__`cis2010utils4
+s`__package__`
+s`__file__`/Users/Shared/CIS2010/cis2010utils4.py
+s`__cached__`/Users/Shared/CIS2010/__pycache__/cis2010utils4.cpython-310.pyc
+l`__all__`['StartHere', 'EndHereconsole', 'nchar', 'paste', 'showBits', 'showNum', 'ToShell', 'h32', 'hecho', 'strhash', 'runsql']`11
+s`z_utils`v4.2
+s`platform`darwin
+s`z_MyName`EVAN ZHANG
+s`z_task`Fall 2023
+t`z_now`2023-11-30 14:45:22.779362
+s`z_path`/Users/evanz
+s`z_os`darwin
+s`z_osn`posix
+v`z_cks`26968212215
+s`z_sess`S14
+s`z_un`
+s`z_hek`$)'YJ[FS%_MFSLM}N=OP4R$/6Vo30z@[QL{lSZf\iF|$J}Kb$5a6$Q9S1_U]:eKH0
+f`runsql`<function runsql at 0x1030dc280>
+f`strhash`<function strhash at 0x1030dcdc0>
+f`h32`<function h32 at 0x1030dc0d0>
+f`hecho`<function hecho at 0x146a2af80>
+f`StartHere`<function StartHere at 0x146a2b0a0>
+f`Endwrite`<function Endwrite at 0x146a2b130>
+f`EndHere`<function EndHere at 0x146a2b1c0>
+f`showBits`<function showBits at 0x146a2b250>
+f`nchar`<function nchar at 0x146a2b2e0>
+f`showNum`<function showNum at 0x146a2b370>
+f`paste`<function paste at 0x146a2b400>
+f`console`<function console at 0x146a2b490>
+f`ToShell`<function ToShell at 0x146a2b520>
+#` End of global variables.
+s`__name__`__main__
+s`__file__`/Users/Shared/CIS2010/S14wcc_PyETL_EvanZhang.py
+f`StartHere`<function StartHere at 0x146a2b0a0>
+f`EndHere`<function EndHere at 0x146a2b1c0>
+f`runsql`<function runsql at 0x1030dc280>
+s`db_name`irs18.db
+s`sqltxt`pragma table_info('zco')
+d`zz`(1, 1)` tail 10 follows
+   COUNT(zipcode)
+0           27558
+d`t1`(10, 6)` tail 10 follows
+   cid     name     type  notnull dflt_value  pk
+0    0    state     TEXT        0       None   0
+1    1  zipcode  INTEGER        0       None   0
+2    2       n1  INTEGER        0       None   0
+3    3       n2  INTEGER        0       None   0
+4    4   numdep  INTEGER        0       None   0
+5    5  elderly  INTEGER        0       None   0
+6    6   a00100  INTEGER        0       None   0
+7    7     schf  INTEGER        0       None   0
+8    8   a06500  INTEGER        0       None   0
+9    9   a19700  INTEGER        0       None   0
+d`t2`(6, 6)` tail 10 follows
+   cid      name     type  notnull dflt_value  pk
+0    0       zip  INTEGER        0       None   0
+1    1   country     TEXT        0       None   0
+2    2     state     TEXT        0       None   0
+3    3    county     TEXT        0       None   0
+4    4      city     TEXT        0       None   0
+5    5  timezone     TEXT        0       None   0
+s`sqlw2b`
+SELECT state, zipcode, n1 FROM irsz
+
+d`w2b`(27558, 3)` tail 10 follows
+      state  zipcode       n1
+27548    AK    99743      600
+27549    AK    99760      320
+27550    AK    99780      800
+27551    AK    99801    12210
+27552    AK    99824     1130
+27553    AK    99827     1270
+27554    AK    99833     1700
+27555    AK    99835     4470
+27556    AK    99901     6280
+27557    AL    99999  2562530
+s`sqlw2c`
+SELECT state, zipcode, n1, n2, numdep, a00100*1000,
+schf FROM irsz
+
+d`w2c`(27558, 7)` tail 10 follows
+      state  zipcode       n1       n2   numdep   a00100*1000   schf
+27548    AK    99743      600     1090      300      45476000      0
+27549    AK    99760      320      630      190      20087000      0
+27550    AK    99780      800     1480      430      42210000      0
+27551    AK    99801    12210    21550     6090     934332000      0
+27552    AK    99824     1130     1850      400      90831000      0
+27553    AK    99827     1270     2140      490      88825000      0
+27554    AK    99833     1700     2970      780     114471000      0
+27555    AK    99835     4470     7550     1910     316394000      0
+27556    AK    99901     6280    11150     3200     437711000      0
+27557    AL    99999  2562530  4716000  1394490  213666713000  56340
+s`sqlw2d`
+SELECT state, zipcode, n1, n2, numdep, a00100*1000,
+schf, a06500*1000, a19700*1000 FROM irsz
+
+d`w2d`(27558, 9)` tail 10 follows
+      state  zipcode       n1       n2   numdep   a00100*1000   schf  a06500*1000  a19700*1000
+27548    AK    99743      600     1090      300      45476000      0      5080000            0
+27549    AK    99760      320      630      190      20087000      0      1788000            0
+27550    AK    99780      800     1480      430      42210000      0      3749000            0
+27551    AK    99801    12210    21550     6090     934332000      0    103964000      6464000
+27552    AK    99824     1130     1850      400      90831000      0     10464000       673000
+27553    AK    99827     1270     2140      490      88825000      0      9628000       452000
+27554    AK    99833     1700     2970      780     114471000      0     10566000       839000
+27555    AK    99835     4470     7550     1910     316394000      0     35516000      2325000
+27556    AK    99901     6280    11150     3200     437711000      0     49471000      2963000
+27557    AL    99999  2562530  4716000  1394490  213666713000  56340  28704990000   3708145000
+s`sqlcc5`
+SELECT state, zipcode, n1, n2, numdep, a00100*1000,
+schf, a06500*1000, a19700*1000 FROM irsz
+WHERE zipcode > 1000 and zipcode < 99999
+
+d`cc5`(27556, 9)` tail 10 follows
+      state  zipcode     n1     n2  numdep  a00100*1000  schf  a06500*1000  a19700*1000
+27546    AK    99737   1840   3970    1360    122002000    60     11396000      1243000
+27547    AK    99743    600   1090     300     45476000     0      5080000            0
+27548    AK    99760    320    630     190     20087000     0      1788000            0
+27549    AK    99780    800   1480     430     42210000     0      3749000            0
+27550    AK    99801  12210  21550    6090    934332000     0    103964000      6464000
+27551    AK    99824   1130   1850     400     90831000     0     10464000       673000
+27552    AK    99827   1270   2140     490     88825000     0      9628000       452000
+27553    AK    99833   1700   2970     780    114471000     0     10566000       839000
+27554    AK    99835   4470   7550    1910    316394000     0     35516000      2325000
+27555    AK    99901   6280  11150    3200    437711000     0     49471000      2963000
+s`sqlcc6`
+SELECT state, zipcode, n1, n2, numdep, a00100*1000,
+schf, a06500*1000, a19700*1000 FROM irsz
+WHERE zipcode > 1000 and zipcode < 99999 and state = "GA"
+
+d`cc6`(665, 9)` tail 10 follows
+    state  zipcode    n1    n2  numdep  a00100*1000  schf  a06500*1000  a19700*1000
+655    GA    39854   830  1640     580     32332000     0      2107000       253000
+656    GA    39859   490   960     320     23921000    40      1903000       367000
+657    GA    39861   320   630     190     14571000    40      1036000            0
+658    GA    39862   490   930     310     21228000    30      1568000       387000
+659    GA    39866   180   320     100      7696000     0       494000            0
+660    GA    39867   150   280      90      5435000     0       307000            0
+661    GA    39870   770  1570     610     33436000    50      1965000       442000
+662    GA    39877   160   320     100      7839000     0       536000            0
+663    GA    39886   550  1060     410     23856000    40      1685000       278000
+664    GA    39897  1310  2680     920     66730000   100      4609000       781000
+s`sqlcc7`
+SELECT state, zipcode, n1, n2, numdep, a00100*1000,
+schf, a06500*1000, a19700*1000, elderly FROM irsz
+WHERE zipcode > 1000 and zipcode < 99999 and state = "GA"
+
+d`cc7`(665, 10)` tail 10 follows
+    state  zipcode    n1    n2  numdep  a00100*1000  schf  a06500*1000  a19700*1000  elderly
+655    GA    39854   830  1640     580     32332000     0      2107000       253000      290
+656    GA    39859   490   960     320     23921000    40      1903000       367000      140
+657    GA    39861   320   630     190     14571000    40      1036000            0      110
+658    GA    39862   490   930     310     21228000    30      1568000       387000      190
+659    GA    39866   180   320     100      7696000     0       494000            0       50
+660    GA    39867   150   280      90      5435000     0       307000            0       60
+661    GA    39870   770  1570     610     33436000    50      1965000       442000      200
+662    GA    39877   160   320     100      7839000     0       536000            0       60
+663    GA    39886   550  1060     410     23856000    40      1685000       278000      120
+664    GA    39897  1310  2680     920     66730000   100      4609000       781000      370
+#` End of task variables.
